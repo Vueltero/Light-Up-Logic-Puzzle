@@ -1,0 +1,47 @@
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class Mania10x10 : MonoBehaviour
+{
+    string[] puzzles =
+    {
+        "10x10:a3kBdBaBBn1bB3aBb11aBc0cBB0aBbBnBbBf1aBc21bBa", "10x10:c1BeB0f0dBbBaBB0f3dBi0gBfBeBb2aB2B0fBd12e", "10x10:a2cBaBiBaBB1l3e2eBf1e2e0l000aBiBa1cBa", "10x10:1a1c0b0mBe01b0Ba01hBfBh01a1BbB0e1m1b0c0aB", "10x10:bBgBaB11aB1Bc0b2cBl1iBsBbBc21aBB1a21Bc1g", "10x10:Bh2b20aBiBbBiBbBBn12b1i2bBi0a00bBhB", "10x10:kBb0aB2jBf3aBaBhBB1Bh2a1a2f2jBBaBbBk", "10x10:a2a3bBaBm1BbB2nBdBdBd2nBBbBBmBaBb3a2a", "10x10:bBa2BeBeBdB1d3h1aBhBh3bBeBbB1l2a1cBeBd", "10x10:aBbBbBcBj3a4b1c2a3nBb1n3aBc1b2aBj2cBbBbBa", "10x10:BaBc1a2gB3b1bB2a1k0dBfBb1c3hBd1b0iBe1BcB1BaB", "10x10:aBfBaBd1a4aBa0b1p1eBd2e0pBbBa3aBaBd2a3f2a", "10x10:aBd2o2f00B1bBbBcBe2aBdBaBbBaBgBBb2dB1f21e1c1a", "10x10:d0g0aBa0Bd2dB1e1Bb2c1n2c0bBBeBBdBdB2a1aBgBd", "10x10:aB0aBaBa2f1cBgBnBB3b1d0bB1Bn2g2c1f1aBaBa0Ba", "10x10:b2aBa0g2aBa0a1Bn1e1dBa1bBdBa1fBc1BlBa0aBcBa1a0c", "10x10:r1B1Bb1e1dBb2aBcBj0cBa2bBd1eBb1010r", "10x10:BaBBbBBaBc2b1dBf2aBaBdBa2tBa2d3aBa2fBdBbBcBaB1bB2aB", "10x10:BfBj2b0Ba0aBcBh1a2c0BcBf2cBc2h2o2aBf1", "10x10:kB1aBBa02aBhBa10d20vB0d00a1hBaBBaB0a1Bk", "10x10:lB0bB1bBaBdBa22bBb2bBtBb1bBb1BaBd2aBb1BbBBl", "10x10:e1d1g1BcBaB3eBdB0a0Bi2a1bBh2bBb22jBBB2bBcBf", "10x10:c01d0k2b0dB1a1e2d1c0aBc1cBaBBa1e3b0bBd1mB1dB", "10x10:aBaBBa0dBf01d01d2hBb0d0aBBa2dBb0hBdB1dB0f3dBaBBaBa", "10x10:cBa0e2cBcBg2aBj11b1b1aB0aBbBb0BjBa0g0c2c0eBa1c", "10x10:e1a1aBB20bBd2e1bBiBcBd0dBBb1e2b2bBf0cBf2aBaBbBe", "10x10:lBa3c01c2bBhBbBg2Ba22cBc2b2a0dBa2cBBc2iBd1aBbB", "10x10:dBBf0bBd3c2b1a1cBeBc0Bh0BhBe21c3bBa1bBbBhBBd", "10x10:c3d1a0cBgBBc1f3b2aBfBa2b2aBfBa3b1fBcBBg0c1a2d1c", "10x10:aBf2e00d10fBBa2a0b2a1vBa1b0aBa0BfBBd0BeBf3a", "10x10:Bb2c1f2fBbBBd3b2c0aBh1iBa0bBc0aBaBbB2hBeBb0c0b", "10x10:bBdBe3b1c2aBd1a1cBBB1z1B2Bc0a1d0aBcBbBe1dBb", "10x10:bBh3aBa12aBj0aBfBbBpBb0fBaBj2a1BaBa2hBb", "10x10:BbBbBBa0aBbBoB1aBe1h0bBhBe1aBBoBbBa0a11b2bB", "10x10:bBbBB2kBa3bBc2aBaBgBBc0dBa2eBgBaBa3dBb1Bf1eBa0e", "10x10:1dBa0aBe0aBb100d0l11pBBl0dB1BbBa2e0a1aBd1", "10x10:eBa2g22aBd1k2cB1h10hB0cBk0dBa2Bg1a2e", "10x10:Bh10aBdBaBbB2bBBmBbBBb0bBb11bBm11bBBb1a1dBa21hB", "10x10:a0BdB0bBbB2bBa1hBB2f0BtBBf1BBhBaBbB1bBb01d10a", "10x10:aBd2Be0e10i0c2c0g1f0g1c1c1i2Be2e0BdBa", "10x10:dBB2bBd0e1f0c0d2BBeBj0e010d2cBf1e0d0bBBBd", "10x10:BbBb0b0cBb0mBbBb1bBb3d0d0dBbBb2b1b1mBb0c0bBbBbB", "10x10:a2f1bBaBBB1aBkBh1c2bBfBb1c1hBk0aBB2Ba1bBf1a", "10x10:b1e2s1a11b0b1cBeBBbBBeBc3bBb0BaBs2e2b", "10x10:BbBb0bBc1bBd3f0kBaBd3aB0a1dBaBkBf1dBb0c0b1b1b0", "10x10:aBBd1bBc3e0bB1bBd11d0cBcBa0i0bBf2b0b1j20b1d2cBa", "10x10:gBe2aBd2e0eBe3bBb11hB2bBbBe2e2eBd2aBe0g", "10x10:aBa0fBdBb1d3c2fBd1cBc2aBc2c0aBd2d0c2cBb2d2bBbBaBf", "10x10:Ba1d1a2kBa2bBaBaBhBb1a00a1d1aBBa0bBhBa2a2b1aBkBa2dBa2", "10x10:fBe1aBa3c1c12a21a0gBd1a1fBhBd20Ba2aBfBa3BBb2m", "10x10:bBd2b2c1BcBBaBd2aB1hBtBh0Ba3dBaBBc0Bc2bBdBb", "10x10:a3aBdBaBd0a0aBaBqBaBbBBhBBb0a2q0a1aBa0dBaBd2a1a", "10x10:cBa2f2bBd2eB0bBc0bBbBBpB1b1bBcBb2BeBd0b1f1a0c", "10x10:g0c0b3a1e1f1d0cBaBa1aB0h00a1a0a2c1dBf3eBa1bBc1g", "10x10:d3cBc2dBcBaBcBBa1eBg0bBfBb0b0eBd1aBc1Bc2dBfBc1a", "10x10:gBc0B1dBd1aBgBh1bBa20aBdBk0b1dBg3c0eBf", "10x10:d2BBiBa2dBc3dBa0cBv4cBa3d3c3d3aBiBB0d", "10x10:c2bBaB1c1g1hBfBBg0i3cBfBBb2kBiBb0a1B", "10x10:cBd1d1f2iBaBd1bBh1BaB2eBBf2d1fBhBaBg2a", "10x10:eBaB0a1a0gBg1d1b4c2cBBhBBc0c1b0dBgBgBa1aB2aBe", "10x10:dBhBcBaB2e1fBc2Bi2iBd1c2Ba1eBf2c2a2d0e", "10x10:bB2c1l1dBcBcB0a2b0bBcBf1c2bBbBaBBcBcBdBl1c2Bb", "10x10:eBBaBb1nB1aBc0e1b1j03a1cBgBBb1b1gB1e0BaBb0aBa", "10x10:aBa1dBc1c0kBa10a10c1b2p1bBc0BaB1aBk1cBc0d1a3a", "10x10:aBiB0cBa21d0cBb1o0d1o3b1c0dB1aBc1Bi1a", "10x10:BcBf3bBa0d0e2d1kBc1e0cBcBh0e3c2bBa2cBcBe", "10x10:Bc2aBBeBa3eB0g3bBbBfBbBcBbBc4hBf0f1b0bBBc1cB0c", "10x10:BBbBdBmB3aBe2c2fBc2eBBBBb101a1bBe0f2kBaBeB", "10x10:Bd10bBaB0e1i0aBcBe1eBfBe0e3cBa1iBeB3a1b1BdB", "10x10:a2bBe1g2BBj1dBBBc1fB3fBcBBBd4jB1BgBe2bBa", "10x10:0aB0bBBaBBh1u1a0b3a2b1a1b1aBuBh1BaB0bBBaB", "10x10:BaBeBBhBb1e1d0b3fBa2d11d2a0f1bBd0e2bBhB1eBa2", "10x10:Ba2h2gBbBc3hB0bBhBiBf00b3b2cBdBgB2aBg", "10x10:B0cBc0e2g0f2d3BfBc0a1c2c2aBBd02fBk1d1BcBc0", "10x10:a1bB2bBa1h2bB1b1BoBbBf1b2o2BbB0bBhBaBbB1bBa", "10x10:2f1dBaBBeBhBc0b3jBb0aBBa0b2eBBa2c00Ba00mBg1", "10x10:0aBb1g1aBm10e2a0Bt0e1a20i1cBa1dBa0bBd", "10x10:Bh0b1dBb3hBaBf1cBa1Ba2dBa2BaBc0f0aBhBb1d3bBhB", "10x10:a1a2bBaBdBbBf1b2dBBd1BbBfBb0f1bBBd1BdBbBfBb0d3aBb0aBa", "10x10:h2aBb1b0BcBa2gBe0Bv1Be0g0aBc11b0bBa0h", "10x10:a2b0aB0b1iBc2b0c2aBh2e2b1eBh1aBc2b0c0iBbBBa0b1a", "10x10:e1Ba3e1B0bBa0fBBBcBbBeBbBaBa3c2c2cBdBf0e1a2fBj", "10x10:a0a1b0fBdBa1cBaBiBa0i0a1a1Bi2f2a1a2b0cBBd0cBB0f", "10x10:BhBaBb0BaBBb2lBfBd1a3b2a0d0f2lBbBBa01bBaBhB", "10x10:cBbBd12a3aBbBf0d0k1lBf0Bd2aBc2cBcBa1e2h", "10x10:jBa1dBa3dBBdBb1bBbBBhBBhBBb2b2bBd02d0aBdBa2j", "10x10:dBBe1bB0bBcBd3c2b1Bb2v1b11bBc0dBc1bBBb4eBBd", "10x10:BbBbBa2aBc2d11e2e1Bo1i0bB0fBe2cBc3d2Bb3b1aBa", "10x10:e1a2e2dBjBcBaBd0bB2j1Bb0d2a2cBjBdBe0a2e", "10x10:e01i1f1f11aBaBB1bBbBl2b1b1BBaBa01f0f2iB0e", "10x10:a0bBf1a2dB1d0jBb3d1c3a22aBc4d2b2j1d0BdBa1fBbBa", "10x10:hBa00c2bBdB2aBe1d3cBeBd2eBcBdBeBa01d1b1c0BaBh", "10x10:h1aBdBg3a3h2b1c2BcBfBc00c2b1h1a1gBdBa1h", "10x10:dB2e2aBdBn0bBa2a0h01hBa1a1b1n2d1a1eB1d", "10x10:a3a1cBe0k0a01fBBcBr2c2Bf0BaBk2e2c0aBa", "10x10:d0f0bBaBb0Bb2BBcBdBaBc1dBb3a1dBb0eBaBc1bBBBcBaBbBa3bBd1e", "10x10:b0d2BgBaB2l0a2b1c1i1jBaBb2rBa1Bb2dBBa", "10x10:d1BdBh2bBBb2BfB2d0hB1hBdBBfB2b11bBhBd12d", "10x10:aBdBe1b20c1g2bBBb0d1g2aBg0b2BbBd3g1c0b0BdBdBc", "10x10:l1c2Bc02bBa2BbBcBfBBlBBf1c1b20aBb10cBBc1l", "10x10:bBb1k0a0a1bB0aBbBe2hBaBg1a2b2eBd2bB1a2iBa0b1b1d", "10x10:aBdBBg2aBb0iBB1b2jBb2f0bB1B0b0d0n3a1cBdBBb", "10x10:aBaB1dBeBb0c2gBg0b1a1Bj1Ba0b1gBg2c1bBe1d12aBa", "10x10:2b0b1b1fBh00c0BBf1bBnBbBf010c11h2fBbBb0bB", "10x10:c1aBaBmBaBbB2f1bBb1b00a2dBhBbBaBaBcBBB1bBa2hBa0aBB0d1", "10x10:e1g2b1f2gBc1aB1a3b1l2bBa1BaBc1g2f2b2gBe", "10x10:c3bBdBfBaBBfB2aBa1bBaBeB0h0BeBa1b0a1a1BfBBa0f0d1bBc", "10x10:1c1b0lBBBBd2c2hBfBBa2f0Bb1gB2B1d1kBc2bBb", "10x10:c1d0d2jBBe2e4b2aBBbBa3b3a3bBBaBbBe2eB2jBd0d1c", "10x10:f1e2b2hBaBaBaBa4hBbBBaBdBaBBbBhBa3a1aBaBh2bBe3f", "10x10:cBcBcB0b1cBbBd0aBa2aBj2jBjBa1aBa3d1bBc0b10cBcBc", "10x10:c1g21e0fBb1dBb3bBb4n1bBbBb0dBb1f2eB1g2c", "10x10:jBbB1a1d1b2g0g1c0k1b21iBh02bBhBaBBaBb", "10x10:kBa1B1dBeBaBe3aBaB2f1fBf2BaBa0e3aBeBd111aBk", "10x10:iBdBa1b1e1e3g2bBcBBdB0cBb0g1e1eBbBa2d1i", "10x10:gB1d2BbBeBgBc3a3b1cBBd0cBBe1cBaBe2i1BbBiBBa", "10x10:aBf1aBc0cBj2Bi1hBBiB1a02aBa0aBdBj0aBc2bB1aBB", "10x10:BBaB1eBBe2c11e2e1mBi2e1f1BeBaBBe3bBBa2Be", "10x10:Ba1c2aBbBa1BaBBk1r1Bh11sBa1aB0a12bBaBcBaBa", "10x10:1dBe3aBb3c3b2c1c2g1b1aBjBa3b1gBc1c0b2c2bBaBeBdB", "10x10:a2eBaBgBbBd2b2eBBBa02a12aBfB0a1i0BBaBB0d2b2hBc1eBaB", "10x10:2bBb0b0v1dBbBc00cBBcB1cBb0d2v1b1bBbB", "10x10:1a0aBBa0a1dB1p1d0bBh11h1b0dBp10d0a1a00aBaB", "10x10:b2aBBaBcBBdBBmBd1cBBdB0b2BdB2c1dBmBBd0BcBa1BaBb", "10x10:11c1bBdBa2fBc2aBn1c02bBf1BeBd1c2aBj0Ba0aBd1Ba", "10x10:bBa2Ba1wBa2b0aBa0aBdBaB2aBdBa2aBa2b1aBwBaB0aBb", "10x10:cBhBe3a2bB2dBc1a2a1bBh00hBcBa1a0bBb0Bd1b1e1d0f", "10x10:a2e0bBaBBl2aBB3c0bBjBi0aBc2b2h2a2BBaBBg2eBb", "10x10:b1j2c1aBcB1bBfBf1f1B20a2bBf02d1Bh1a1aB0l10a", "10x10:eBg3a3fBdBfBBb4aB2a2bBfBbBa2Ba0b2Bf1d0fBaBg1e", "10x10:1fBBBBc1c2k2d0bBv1bBd1kBc2cBBBBf1", "10x10:cBg00eB0aBc3gBbBeBbBc2b2b3cBcBb4dBc3eBBe0Bc0f", "10x10:d1b2c2a1dBbBf1c0aB2zBa01eBfBb3aBdBeBbBb", "10x10:a2BcBe1dBa2aBc1bB11k1n1kBB2bBcBaBa3d3e1cB2a", "10x10:a2a2bBaBcBd1fBBdBb4b0bBtBb0b1b1dB2f2dBcBaBbBa3a", "10x10:e1bB0b0bBa3dBcBe0bBd1BgBi2bBc2d3cBbB1Be3e2bBa1b", "10x10:Bb0cBa2fBc2jBb3dBfBfBf1d0b0jBc2f2aBc0bB", "10x10:jBb2bBb3j1Bf02c0bBf0b0cBBf11jBb1b0bBj", "10x10:BaBeBaBa1bB3bB0a1aBdBbBcBb1iBa1e2e0eB0Bd0h1BbB1dBBBb", "10x10:b1dBc0Bd10v2aBbBa1b1aBb1aBvB1dBBcBd1b", "10x10:gBc10c0a0a2j1b2d0a0a3a2hBa3aBa0dBb2jBa3aBcB3cBg", "10x10:aB1d0bBc1dBa3d2aBbBaBaBgBbBbBaBa1fBb1aBd0fBf1d3gBb", "10x10:1e1dBcBcBc2d1a1g0bBb1c0b1cBb1bBg0a0d1c1c2c3d0eB", "10x10:aBbBBdBBBbBc20Ba3nBB2d0f1a0d2jBBhBb2d2gBaBa", "10x10:Ba2Bj0bBa2f2cBBa0zfBa2Bc2f2a2b3j2BaB", "10x10:BjBa2dBeB1dBcBf3bBa4a2b1aBaBbBfBc2d00eBd1aBjB", "10x10:b0BbBhBBb310a0a2aBfBa2lB1a2fBh0a1a0e0i0dBa2aBb", "10x10:jBa0aB0a2aBdBBe3fBdBbBf3b1d0f1eB0dBaBaB0a1aBj", "10x10:b0d2aBfBaBg0aBb11BBg1i1hBBB3kBa2gBaBc3dBaB", "10x10:dB0q1b0c2Bf11aBa2bBa0bBaBbBaBa1Bf1Bc1b0q10d"
+    };
+    private LightUp LightUpManager;
+
+    public void Start()
+    {
+        LightUpManager = GameObject.Find("GameManager").GetComponent<LightUp>();
+    }
+
+    public void SelectPuzzle()
+    {
+        string[] splitLevelName = EventSystem.current.currentSelectedGameObject.name.Split('-');
+        LightUpManager.currentPack = 2;
+        LightUpManager.currentLevel = int.Parse(splitLevelName[1]) - 1;
+        if (int.Parse(splitLevelName[1]) - 1 == 0)
+            LightUpManager.previousLevelID = "empty";
+        else
+            LightUpManager.previousLevelID = puzzles[int.Parse(splitLevelName[1]) - 2];
+        if (int.Parse(splitLevelName[1]) - 1 == 149)
+            LightUpManager.nextLevelID = "empty";
+        else
+            LightUpManager.nextLevelID = puzzles[int.Parse(splitLevelName[1])];
+        LightUpManager.LoadGameID(puzzles[int.Parse(splitLevelName[1]) - 1]);
+    }
+
+    public void SelectPuzzleByID(int id)
+    {
+        LightUpManager.currentPack = 2;
+        LightUpManager.currentLevel = id;
+        if (id == 0)
+            LightUpManager.previousLevelID = "empty";
+        else
+            LightUpManager.previousLevelID = puzzles[id - 1];
+        if (id == 149)
+            LightUpManager.nextLevelID = "empty";
+        else
+            LightUpManager.nextLevelID = puzzles[id + 1];
+        LightUpManager.LoadGameID(puzzles[id]);
+    }
+}
