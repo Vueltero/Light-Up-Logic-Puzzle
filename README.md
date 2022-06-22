@@ -1,2 +1,2 @@
-# Light-Up-Logic-Puzzle
-Github repo for Light Up: Logic Puzzle. Only the /Scripts folder. Confidential values are shown as "---".
+# Light Up: Logic Puzzle
+Store link: https://play.google.com/store/apps/details?id=com.IMIan.LightUpLogicPuzzle
